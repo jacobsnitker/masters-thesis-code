@@ -45,7 +45,7 @@ source venv/bin/activate
 
 # Install dependencies
 # On Apple Silicon Mac:
-pip install tensorflow-macos tensorflow-metal
+pip install tensorflow-macos==2.15.0 tensorflow-metal
 pip install -r requirements.txt
 
 # On Intel Mac / Linux:
