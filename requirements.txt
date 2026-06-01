@@ -1,6 +1,7 @@
-# On Apple Silicon Mac: pip install tensorflow-macos==2.15.0 tensorflow-metal
-# On Linux/HPC: tensorflow==2.15.0 with CUDA/12.1.1 module loaded (no cuDNN module)
-tensorflow==2.15.0
+# TensorFlow — install BEFORE running pip install -r requirements.txt:
+#   Apple Silicon Mac: pip install tensorflow-macos==2.15.0 tensorflow-metal
+#   Intel Mac / Linux: pip install tensorflow==2.15.0
+# Do NOT install both — they conflict.
 numpy>=1.24.0,<2.0.0
 pandas>=2.0.0
 scipy>=1.10.0
