@@ -1,0 +1,33 @@
+\begin{table*}[!htbp]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \caption{Change in weighted F1 (\%) when using 2s windows instead of 10s windows under LOSO CV (2s $-$ 10s). \textbf{Bold} = gain $>1.5$\,pp; \textit{italic} = loss $>1.5$\,pp.}
+  \label{tab:delta_loso}
+  \begin{tabular}{lrrrrrrrr}
+    \toprule
+    \textbf{Modalities} & GB & LGBM & LDA & LR & MLP & SVM & Transformer & \textbf{Mean} \\
+    \midrule
+    ECG & +-0.0 & +0.1 & \textbf{+2.2} & +1.1 & \textbf{+2.7} & -1.4 & \textbf{+3.0} & +1.1 \\
+    EDA & -0.3 & -0.5 & -1.2 & -0.4 & +0.7 & -0.7 & -1.0 & -0.5 \\
+    EEG & +0.2 & +0.7 & -1.1 & -0.2 & -0.7 & -0.8 & -0.8 & -0.4 \\
+    Gaze & +1.0 & +-0.0 & +0.7 & +0.2 & +0.5 & -1.3 & \textbf{+1.7} & +0.4 \\
+    \midrule
+    ECG, EDA & \textit{-1.6} & -0.4 & +1.5 & +1.4 & -0.6 & -1.0 & -1.0 & -0.2 \\
+    ECG, EEG & +0.7 & \textbf{+1.8} & +0.1 & +0.4 & \textbf{+2.1} & \textbf{+1.7} & +1.2 & +1.1 \\
+    ECG, Gaze & \textit{-4.0} & \textit{-2.6} & \textbf{+4.1} & \textbf{+3.0} & -0.7 & -1.5 & -0.5 & -0.3 \\
+    EDA, EEG & +1.2 & \textbf{+2.5} & \textit{-4.3} & -0.4 & -1.5 & -0.1 & -1.0 & -0.5 \\
+    EDA, Gaze & +0.2 & \textbf{+2.2} & \textbf{+3.9} & \textbf{+1.9} & \textbf{+1.9} & +0.4 & +1.3 & \textbf{+1.7} \\
+    EEG, Gaze & \textbf{+1.6} & +1.0 & -0.6 & -0.1 & +0.9 & +1.5 & \textit{-2.1} & +0.3 \\
+    \midrule
+    ECG, EDA, EEG & \textbf{+2.5} & \textbf{+4.2} & +0.2 & -0.3 & -0.1 & +1.2 & -1.4 & +0.9 \\
+    ECG, EDA, Gaze & \textit{-1.9} & +0.6 & \textbf{+5.2} & +1.2 & +0.8 & +0.4 & \textbf{+3.1} & +1.3 \\
+    ECG, EEG, Gaze & +1.1 & \textbf{+1.6} & -1.1 & -1.0 & \textbf{+2.6} & \textbf{+2.3} & +0.6 & +0.9 \\
+    EDA, EEG, Gaze & \textbf{+2.5} & \textbf{+2.3} & +1.4 & +0.9 & +1.4 & \textbf{+2.6} & -1.1 & +1.4 \\
+    \midrule
+    All & -0.2 & \textbf{+2.8} & -0.2 & -1.3 & +0.2 & \textbf{+2.4} & \textit{-3.4} & +0.0 \\
+    \midrule
+    \textbf{Mean} & +0.2 & +1.1 & +0.7 & +0.4 & +0.7 & +0.4 & -0.1 & +0.5 \\
+    \bottomrule
+  \end{tabular}
+\end{table*}

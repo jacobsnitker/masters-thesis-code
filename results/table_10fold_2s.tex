@@ -1,0 +1,33 @@
+\begin{table*}[!htbp]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \caption{Classifier performance for binary classification of high and low cognitive load using 10-fold cross-validation (2s windows). Numbers are in Accuracy (F1\textsubscript{weighted}) format. Best F1 per row is \textbf{bold}.}
+  \label{tab:results_10fold_2s}
+  \begin{tabular}{lcccccccccc}
+    \toprule
+    \textbf{Modalities} & \multicolumn{10}{c}{\textbf{Models}} \\
+    \cmidrule(l){2-11}
+    & GB & LGBM & LDA & LR & MLP & RF & SVM & XGBoost & CNN & Transformer \\
+    \midrule
+    ECG & 71.01 (58.97) & 71.01 (58.97) & 71.01 (58.97) & 71.01 (58.97) & 71.01 (58.97) & 71.01 (58.97) & 71.01 (58.97) & 71.01 (58.97) & \textbf{72.55 (68.18)} & 71.01 (58.97) \\
+    EDA & 71.94 (64.27) & 72.17 (63.37) & 66.81 (55.23) & 71.12 (61.03) & \textbf{69.15 (65.02)} & 71.57 (62.28) & 71.66 (63.55) & 71.01 (58.97) & 71.00 (59.34) & 70.92 (64.15) \\
+    EEG & — & — & — & — & — & — & — & — & — & — \\
+    Gaze & — & — & — & — & — & — & — & — & — & — \\
+    \midrule
+    ECG, EDA & — & — & — & — & — & — & — & — & — & — \\
+    ECG, EEG & — & — & — & — & — & — & — & — & — & — \\
+    ECG, Gaze & — & — & — & — & — & — & — & — & — & — \\
+    EDA, EEG & — & — & — & — & — & — & — & — & — & — \\
+    EDA, Gaze & — & — & — & — & — & — & — & — & — & — \\
+    EEG, Gaze & — & — & — & — & — & — & — & — & — & — \\
+    \midrule
+    ECG, EDA, EEG & — & — & — & — & — & — & — & — & — & — \\
+    ECG, EDA, Gaze & — & — & — & — & — & — & — & — & — & — \\
+    ECG, EEG, Gaze & — & — & — & — & — & — & — & — & — & — \\
+    EDA, EEG, Gaze & — & — & — & — & — & — & — & — & — & — \\
+    \midrule
+    All & — & — & — & — & — & — & — & — & — & — \\
+    \bottomrule
+  \end{tabular}
+\end{table*}

@@ -1,0 +1,16 @@
+Combo,Best Unbal,Best Bal,Δ F1_macro
+ECG,43.7 (MLP),44.8 (LGBM),+1.1
+EDA,48.2 (MLP),48.0 (RF),-0.1
+EEG,47.6 (Transformer),46.1 (SVM),-1.5
+Gaze,45.5 (Transformer),45.2 (MLP),-0.3
+ECG+EDA,49.4 (MLP),49.6 (MLP),+0.2
+ECG+EEG,46.9 (MLP),46.3 (MLP),-0.6
+ECG+Gaze,46.8 (Transformer),46.9 (MLP),+0.1
+EDA+EEG,51.0 (SVM),50.7 (SVM),-0.3
+EDA+Gaze,48.8 (Transformer),46.5 (SVM),-2.3
+EEG+Gaze,46.4 (SVM),46.7 (MLP),+0.2
+ECG+EDA+EEG,49.7 (SVM),50.4 (MLP),+0.7
+ECG+EDA+Gaze,47.7 (SVM),47.5 (SVM),-0.2
+ECG+EEG+Gaze,45.3 (LR),45.1 (LDA),-0.2
+EDA+EEG+Gaze,49.2 (Transformer),49.1 (SVM),-0.1
+All,49.8 (Transformer),49.0 (SVM),-0.8

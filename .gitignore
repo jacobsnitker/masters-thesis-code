@@ -1,0 +1,32 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Dataset (download separately)
+Data Set/
+
+# Generated caches (large numpy files)
+results/*.npz
+
+# TensorBoard logs
+results/tensorboard/
+results/tensorboard_2s/
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Claude
+.claude/
+
+# SLURM logs
+*.log
+*.err
+
+# Articles (copyright)
+articles/
+Articles/

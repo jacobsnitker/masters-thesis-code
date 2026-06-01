@@ -1,0 +1,19 @@
+\begin{table}[!htbp]
+  \centering
+  \caption{Mean per-sample inference time (ms) averaged across all 15 modality combinations, for 10s and 2s windows. Measured on an 80/20 stratified hold-out set (median of 10 repeats). CNN and Transformer omitted (raw-signal inputs).}
+  \label{tab:inference_time}
+  \begin{tabular}{lrr}
+    \toprule
+    \textbf{Model} & \textbf{10s (ms/sample)} & \textbf{2s (ms/sample)} \\
+    \midrule
+    LDA & $0.0001 \pm 0.0000$ & $0.0000 \pm 0.0000$ \\
+    LR & $0.0001 \pm 0.0000$ & $0.0001 \pm 0.0001$ \\
+    MLP & $0.0002 \pm 0.0000$ & $0.0002 \pm 0.0001$ \\
+    GB & $0.0029 \pm 0.0002$ & $0.0023 \pm 0.0007$ \\
+    XGBoost & $0.0026 \pm 0.0001$ & $0.0023 \pm 0.0005$ \\
+    RF & $0.0659 \pm 0.0023$ & $0.0270 \pm 0.0059$ \\
+    SVM & $0.1412 \pm 0.0334$ & $1.1347 \pm 0.2013$ \\
+    LGBM & $0.2083 \pm 0.0214$ & $0.1797 \pm 0.0508$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
