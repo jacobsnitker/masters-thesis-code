@@ -59,10 +59,10 @@ After downloading the dataset and placing it in `Data Set/doi-10.5683-sp3-h0aelt
 
 ```bash
 # macOS
-brew install unrar
+brew install unar
 
 # Linux
-sudo apt-get install unrar
+sudo apt-get install unar
 ```
 
 You can also run the extraction manually:

@@ -5,11 +5,11 @@ Run this once after downloading the dataset:
     python setup_data.py
 
 Requires one of the following to be installed:
-  - unrar:  brew install unrar          (macOS)
-            apt-get install unrar       (Linux)
+  - unar:   brew install unar           (macOS — recommended)
+            apt-get install unar        (Linux)
   - 7z:     brew install p7zip          (macOS)
             apt-get install p7zip-full  (Linux)
-  - rarfile Python package: pip install rarfile  (also needs unrar binary)
+  - unrar:  apt-get install unrar       (Linux only)
 """
 
 import os
@@ -19,6 +19,14 @@ import sys
 DATA_DIR = os.path.join(os.path.dirname(__file__), "Data Set", "doi-10.5683-sp3-h0aelt 2")
 
 MODALITIES = ["ECG", "EDA", "EEG", "Gaze", "Labels"]
+
+
+def _try_unar(rar_path, out_dir):
+    result = subprocess.run(
+        ["unar", "-o", out_dir, "-f", rar_path],
+        capture_output=True,
+    )
+    return result.returncode == 0
 
 
 def _try_unrar(rar_path, out_dir):
@@ -48,7 +56,7 @@ def _try_rarfile(rar_path, out_dir):
 
 
 def extract(rar_path, out_dir):
-    for fn in [_try_unrar, _try_7z, _try_rarfile]:
+    for fn in [_try_unar, _try_unrar, _try_7z, _try_rarfile]:
         try:
             if fn(rar_path, out_dir):
                 return True
@@ -85,9 +93,9 @@ def main():
         else:
             print("FAILED.")
             print(f"\nCould not extract {rar_path}.")
-            print("Please install unrar or 7z and try again:")
-            print("  macOS:  brew install unrar")
-            print("  Linux:  sudo apt-get install unrar")
+            print("Please install unar or 7z and try again:")
+            print("  macOS:  brew install unar")
+            print("  Linux:  sudo apt-get install unar")
             sys.exit(1)
 
     if any_extracted:
