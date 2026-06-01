@@ -1,4 +1,5 @@
 import os
+import sys
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 BASE_DIR  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -10,6 +11,28 @@ EDA_DIR   = os.path.join(DATA_DIR, "EDA")
 EEG_DIR   = os.path.join(DATA_DIR, "EEG")
 GAZE_DIR  = os.path.join(DATA_DIR, "Gaze")
 LABEL_DIR = os.path.join(DATA_DIR, "Labels")
+
+# ── Auto-extract .rar files if modality directories are missing ────────────────
+def _ensure_extracted():
+    missing = [d for d in [ECG_DIR, EDA_DIR, EEG_DIR, GAZE_DIR, LABEL_DIR]
+               if not os.path.isdir(d)]
+    if not missing:
+        return
+    if not os.path.isdir(DATA_DIR):
+        print("ERROR: Dataset not found. Please download the CLARE dataset from:")
+        print("  https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP3/H0AELT")
+        print(f"and place it at: {DATA_DIR}")
+        sys.exit(1)
+    print("Dataset directories missing — running extraction...")
+    import subprocess
+    result = subprocess.run(
+        [sys.executable, os.path.join(BASE_DIR, "setup_data.py")],
+        check=False,
+    )
+    if result.returncode != 0:
+        sys.exit(1)
+
+_ensure_extracted()
 
 # ── Sampling rates ─────────────────────────────────────────────────────────────
 FS_ECG  = 512    # Hz

@@ -53,6 +53,24 @@ pip install tensorflow==2.15.0
 pip install -r requirements.txt
 ```
 
+### Data setup
+
+After downloading the dataset and placing it in `Data Set/doi-10.5683-sp3-h0aelt 2/`, the `.rar` files need to be extracted. This happens automatically when you first run `main.py`, but requires `unrar` to be installed:
+
+```bash
+# macOS
+brew install unrar
+
+# Linux
+sudo apt-get install unrar
+```
+
+You can also run the extraction manually:
+
+```bash
+python setup_data.py
+```
+
 ---
 
 ## Running the Evaluation
