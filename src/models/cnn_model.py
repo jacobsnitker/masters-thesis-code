@@ -26,6 +26,9 @@ Training:
 
 import numpy as np
 import tensorflow as tf
+if not hasattr(tf, 'keras'):
+    from tensorflow import keras
+    tf.keras = keras
 from tqdm import tqdm
 
 
